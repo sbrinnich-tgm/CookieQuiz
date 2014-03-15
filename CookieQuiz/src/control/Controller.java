@@ -10,8 +10,8 @@ import java.io.ObjectOutputStream;
 
 import javax.swing.JOptionPane;
 
+import view.Images;
 import view.View;
-import model.Images;
 import model.Model;
 import model.Question;
 
@@ -25,7 +25,7 @@ public class Controller {
 	private MouseListen mouseL;
 	
 	public static final int antwortzeit = 10;
-	public static final int waitTime = 30;
+	public static final int waitTime = 10;
 	
 	public static final int mode_MainMenu = 0;
 	public static final int mode_Game = 1;
