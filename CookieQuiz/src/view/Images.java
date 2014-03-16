@@ -11,6 +11,7 @@ public class Images{
 	private BufferedImage[] backArrows = new BufferedImage[2];
 	private BufferedImage[] lifeCookies = new BufferedImage[3];
 	private BufferedImage[] cookies = new BufferedImage[9];
+	private BufferedImage schachteln;
 
 	public Images(String path){
 		this.path = path;
@@ -41,6 +42,10 @@ public class Images{
 			}
 		}catch(Exception e){
 		}
+		try{
+			schachteln = ImageIO.read(getClass().getResource(path + "schachteln.png"));
+		}catch(Exception e){ 
+		}
 	}
 
 	public BufferedImage getBackgroundMainMenu() {
@@ -61,6 +66,10 @@ public class Images{
 	
 	public BufferedImage[] getCookies(){
 		return cookies;
+	}
+	
+	public BufferedImage getSchachteln(){
+		return schachteln;
 	}
 	
 }

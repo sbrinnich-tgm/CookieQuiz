@@ -41,6 +41,7 @@ public class View {
 	public void showGamePanel(){
 		gamePanel = new GamePanel(c);
 
+		frame.setLayout(new BorderLayout());
 		frame.add(gamePanel, BorderLayout.CENTER);
 		frame.add(gamePanel.getProgBar(), BorderLayout.SOUTH);
 		frame.setVisible(true);
@@ -53,7 +54,7 @@ public class View {
 	public void showWaitingPanel(){
 		waitingPanel = new WaitingPanel(c);
 
-		frame.repaint();
+		frame.setLayout(new BorderLayout());
 		frame.add(waitingPanel);
 		frame.setVisible(true);
 	}
@@ -65,7 +66,7 @@ public class View {
 	public void showMainMenuPanel(){
 		mainMenuPanel = new MainMenuPanel(c);
 
-		frame.repaint();
+		frame.setLayout(new BorderLayout());
 		frame.add(mainMenuPanel);
 		frame.setVisible(true);
 	}

@@ -51,13 +51,7 @@ public class GamePanel extends JPanel{
 		g2d.setColor(Color.BLACK);
 		g2d.setFont(new Font("Font1", Font.BOLD, 15));
 
-		g2d.drawImage(c.getImages().getBackgroundGame(), 0, 0, this);
-		
-		g2d.fill(rectAnswer1);
-		g2d.fill(rectAnswer2);
-		g2d.fill(rectAnswer3);
-		g2d.fill(rectAnswer4);
-		
+		g2d.drawImage(c.getImages().getBackgroundGame(), 0, 0, this);		
 
 		//Frage
 		g2d.setColor(new Color(0, 0, 0, 75));
@@ -72,15 +66,22 @@ public class GamePanel extends JPanel{
 		g2d.drawString(c.getModel().getaQuestion().getQuestion(), 50, 125);
 		
 		//Antworten
+		g2d.setColor(Color.BLACK);
+		g2d.fillRoundRect((int)rectAnswer1.getX(), (int)rectAnswer1.getY(), (int)rectAnswer1.getWidth(), (int)rectAnswer1.getHeight(), 15, 15);
+		g2d.fillRoundRect((int)rectAnswer2.getX(), (int)rectAnswer2.getY(), (int)rectAnswer2.getWidth(), (int)rectAnswer2.getHeight(), 15, 15);
+		g2d.fillRoundRect((int)rectAnswer3.getX(), (int)rectAnswer3.getY(), (int)rectAnswer3.getWidth(), (int)rectAnswer3.getHeight(), 15, 15);
+		g2d.fillRoundRect((int)rectAnswer4.getX(), (int)rectAnswer4.getY(), (int)rectAnswer4.getWidth(), (int)rectAnswer4.getHeight(), 15, 15);
+
+		g2d.setColor(Color.WHITE);
 		g2d.drawString(c.getModel().getaQuestion().getAnswers()[0], (int)rectAnswer1.getX()+25, (int)rectAnswer1.getY()+25);
 		g2d.drawString(c.getModel().getaQuestion().getAnswers()[1], (int)rectAnswer2.getX()+25, (int)rectAnswer2.getY()+25);
 		g2d.drawString(c.getModel().getaQuestion().getAnswers()[2], (int)rectAnswer3.getX()+25, (int)rectAnswer3.getY()+25);
 		g2d.drawString(c.getModel().getaQuestion().getAnswers()[3], (int)rectAnswer4.getX()+25, (int)rectAnswer4.getY()+25);
-
+		
 		g2d.setColor(Color.BLACK);
 		//Cookies
 		try{
-			g2d.drawImage(c.getImages().getCookies()[c.getModel().getaCookies()], 150, 5, this);
+			g2d.drawImage(c.getImages().getCookies()[c.getModel().getaCookies()], 190, 5, this);
 		}catch(Exception e){
 		}
 		
@@ -91,14 +92,34 @@ public class GamePanel extends JPanel{
 		}
 		
 		//Lvl
-		g2d.drawString(c.getModel().getaLvl()+"", 100, 50);
+		try{
+			g2d.drawImage(c.getImages().getSchachteln(), 10, 10, this);
+		}catch(Exception e){
+		}
+		g2d.setFont(new Font("Font2", Font.BOLD, 22));
+		g2d.setColor(Color.BLACK);
+		if(c.getModel().getaLvl() < 10){
+			g2d.drawString(c.getModel().getaLvl()+"", 53, 40);
+			g2d.drawString(c.getModel().getaLvl()+"", 57, 40);
+			g2d.drawString(c.getModel().getaLvl()+"", 55, 38);
+			g2d.drawString(c.getModel().getaLvl()+"", 55, 42);
+			g2d.setColor(Color.WHITE);
+			g2d.drawString(c.getModel().getaLvl()+"", 55, 40);
+		}else{
+			g2d.drawString(c.getModel().getaLvl()+"", 43, 40);
+			g2d.drawString(c.getModel().getaLvl()+"", 47, 40);
+			g2d.drawString(c.getModel().getaLvl()+"", 45, 38);
+			g2d.drawString(c.getModel().getaLvl()+"", 45, 42);
+			g2d.setColor(Color.WHITE);
+			g2d.drawString(c.getModel().getaLvl()+"", 45, 40);
+		}
 		
 		//Zurück-Pfeil
-		if(actualRect == rectBack){
-			g2d.drawImage(c.getImages().getBackArrows()[1], (int)rectBack.getX(), (int)rectBack.getY(), this);
-		}else{
-			g2d.drawImage(c.getImages().getBackArrows()[0], (int)rectBack.getX(), (int)rectBack.getY(), this);
-		}
+//		if(actualRect == rectBack){
+//			g2d.drawImage(c.getImages().getBackArrows()[1], (int)rectBack.getX(), (int)rectBack.getY(), this);
+//		}else{
+//			g2d.drawImage(c.getImages().getBackArrows()[0], (int)rectBack.getX(), (int)rectBack.getY(), this);
+//		}
 		
 	}
 
