@@ -10,6 +10,7 @@ public class Images{
 	private BufferedImage[] backgrounds = new BufferedImage[2];
 	private BufferedImage[] backArrows = new BufferedImage[2];
 	private BufferedImage[] lifeCookies = new BufferedImage[3];
+	private BufferedImage[] cookies = new BufferedImage[9];
 
 	public Images(String path){
 		this.path = path;
@@ -34,6 +35,12 @@ public class Images{
 			}
 		}catch(Exception e){
 		}
+		try{
+			for(int i = 0; i < cookies.length; i++){
+				cookies[i] = ImageIO.read(getClass().getResource(path + "cookies_" + i + ".png"));
+			}
+		}catch(Exception e){
+		}
 	}
 
 	public BufferedImage getBackgroundMainMenu() {
@@ -50,6 +57,10 @@ public class Images{
 	
 	public BufferedImage[] getLifeCookies(){
 		return lifeCookies;
+	}
+	
+	public BufferedImage[] getCookies(){
+		return cookies;
 	}
 	
 }

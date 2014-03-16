@@ -79,7 +79,10 @@ public class GamePanel extends JPanel{
 
 		g2d.setColor(Color.BLACK);
 		//Cookies
-		g2d.drawString(c.getModel().getaCookies()+"", 250, 50);
+		try{
+			g2d.drawImage(c.getImages().getCookies()[c.getModel().getaCookies()], 150, 5, this);
+		}catch(Exception e){
+		}
 		
 		//Life Cookie
 		try{
