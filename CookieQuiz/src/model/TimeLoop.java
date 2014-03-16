@@ -43,9 +43,14 @@ public class TimeLoop extends Thread{
 				}
 			}
 			
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
+			for(int i = 0; i < 10; i++){
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+				}
+				if(c.actualmode == Controller.mode_Game){
+					c.getView().getGamePanel().setProgBarValue(m.getWartezeit()*10-i);
+				}
 			}
 		}
 		this.stop = false;

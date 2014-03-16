@@ -1,5 +1,8 @@
 package view;
 
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+
 import javax.swing.JFrame;
 
 import control.Controller;
@@ -21,6 +24,7 @@ public class View {
 		frame.setSize(575, 600);
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
+		frame.setLayout(new BorderLayout());
 		
 		frame.addWindowListener(new java.awt.event.WindowAdapter() {
 		    @Override
@@ -36,8 +40,9 @@ public class View {
 	
 	public void showGamePanel(){
 		gamePanel = new GamePanel(c);
-		
-		frame.add(gamePanel);
+
+		frame.add(gamePanel, BorderLayout.CENTER);
+		frame.add(gamePanel.getProgBar(), BorderLayout.SOUTH);
 		frame.setVisible(true);
 	}
 	
@@ -47,7 +52,8 @@ public class View {
 	
 	public void showWaitingPanel(){
 		waitingPanel = new WaitingPanel(c);
-		
+
+		frame.repaint();
 		frame.add(waitingPanel);
 		frame.setVisible(true);
 	}
@@ -58,13 +64,18 @@ public class View {
 	
 	public void showMainMenuPanel(){
 		mainMenuPanel = new MainMenuPanel(c);
-		
+
+		frame.repaint();
 		frame.add(mainMenuPanel);
 		frame.setVisible(true);
 	}
 	
 	public MainMenuPanel getMainMenuPanel(){
 		return mainMenuPanel;
+	}
+	
+	public JFrame getFrame(){
+		return frame;
 	}
 	
 }

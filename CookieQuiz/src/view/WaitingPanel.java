@@ -40,7 +40,7 @@ public class WaitingPanel extends JPanel{
 		g2d.drawString(c.getModel().getaCookies()+"", 250, 50);
 		
 		//Life Cookie
-		g2d.drawString(c.getModel().getLifeCookie()+"", 500, 50);
+		//g2d.drawString(c.getModel().getLifeCookie()+"", 500, 50);
 		
 		//Lvl
 		g2d.drawString(c.getModel().getaLvl()+"", 100, 50);

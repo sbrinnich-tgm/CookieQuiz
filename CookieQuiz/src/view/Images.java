@@ -7,8 +7,9 @@ public class Images{
 	
 	String path;
 	
-	private BufferedImage backgroundMainMenu;
+	private BufferedImage[] backgrounds = new BufferedImage[2];
 	private BufferedImage[] backArrows = new BufferedImage[2];
+	private BufferedImage[] lifeCookies = new BufferedImage[3];
 
 	public Images(String path){
 		this.path = path;
@@ -17,24 +18,38 @@ public class Images{
 	
 	public void readImages(){
 		try{
-			backgroundMainMenu = ImageIO.read(getClass().getResource(path + "background_mainMenu.png"));
-		}catch(Exception e){ 
-			System.out.println(path + "background_mainMenu.png");
+			for(int i = 0; i < backgrounds.length; i++){
+				backgrounds[i] = ImageIO.read(getClass().getResource(path + "background_" + (i+1) + ".png"));
+			}
+		}catch(Exception e){
 		}
 		try{
 			backArrows[0] = ImageIO.read(getClass().getResource(path + "backArrow.png"));
 			backArrows[1] = ImageIO.read(getClass().getResource(path + "backArrowOver.png"));
 		}catch(Exception e){ 
-			System.out.println(path + "background_mainMenu.png");
+		}
+		try{
+			for(int i = 0; i < lifeCookies.length; i++){
+				lifeCookies[i] = ImageIO.read(getClass().getResource(path + "lifecookie_" + (i+1) + ".png"));
+			}
+		}catch(Exception e){
 		}
 	}
 
 	public BufferedImage getBackgroundMainMenu() {
-		return backgroundMainMenu;
+		return backgrounds[0];
+	}
+	
+	public BufferedImage getBackgroundGame() {
+		return backgrounds[1];
 	}
 
 	public BufferedImage[] getBackArrows() {
 		return backArrows;
+	}
+	
+	public BufferedImage[] getLifeCookies(){
+		return lifeCookies;
 	}
 	
 }
