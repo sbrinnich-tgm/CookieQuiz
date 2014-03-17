@@ -1,5 +1,5 @@
-package main;
-import control.Controller;
+package cookiequiz.main;
+import cookiequiz.control.Controller;
 
 public class Main {
 

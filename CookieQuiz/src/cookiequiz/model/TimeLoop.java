@@ -1,8 +1,8 @@
-package model;
+package cookiequiz.model;
 
 import java.awt.Color;
 
-import control.Controller;
+import cookiequiz.control.Controller;
 
 public class TimeLoop extends Thread{
 	

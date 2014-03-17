@@ -1,4 +1,4 @@
-package view;
+package cookiequiz.view;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -8,7 +8,7 @@ import java.awt.geom.Rectangle2D;
 
 import javax.swing.JPanel;
 
-import control.Controller;
+import cookiequiz.control.Controller;
 
 @SuppressWarnings("serial")
 public class WaitingPanel extends JPanel{

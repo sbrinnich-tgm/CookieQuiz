@@ -1,8 +1,8 @@
-package model;
+package cookiequiz.model;
 
 import java.io.File;
 
-import control.Controller;
+import cookiequiz.control.Controller;
 
 public class Model {
 

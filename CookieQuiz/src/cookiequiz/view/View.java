@@ -1,11 +1,10 @@
-package view;
+package cookiequiz.view;
 
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
 
 import javax.swing.JFrame;
 
-import control.Controller;
+import cookiequiz.control.Controller;
 
 public class View {
 	

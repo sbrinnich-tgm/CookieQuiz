@@ -1,4 +1,4 @@
-package control;
+package cookiequiz.control;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;

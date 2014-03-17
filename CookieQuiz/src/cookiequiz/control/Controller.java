@@ -1,4 +1,4 @@
-package control;
+package cookiequiz.control;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -10,10 +10,10 @@ import java.io.ObjectOutputStream;
 
 import javax.swing.JOptionPane;
 
-import view.Images;
-import view.View;
-import model.Model;
-import model.Question;
+import cookiequiz.model.Model;
+import cookiequiz.model.Question;
+import cookiequiz.view.Images;
+import cookiequiz.view.View;
 
 public class Controller {
 	
@@ -32,9 +32,11 @@ public class Controller {
 	public static final int mode_WaitScreen = 2;
 	
 	public int actualmode = 0;
+	
+	private String respath = "res/";
 
 	public Controller(){
-		images = new Images("/images/");
+		images = new Images("/res/images/");
 		mouseL = new MouseListen(this);
 		
 		model = new Model(this);
@@ -56,7 +58,7 @@ public class Controller {
 	
 	public void save(){
 		try {
-			FileOutputStream saveFile = new FileOutputStream("res/stats.sav");
+			FileOutputStream saveFile = new FileOutputStream(respath + "stats.sav");
 			ObjectOutputStream save = new ObjectOutputStream(saveFile);
 			save.writeObject(model.getaCookies());
 			save.writeObject(model.getaLvl());
@@ -68,7 +70,7 @@ public class Controller {
 				saveWaitingTime();
 			}
 		} catch (Exception e) {
-			File f = new File("res");
+			File f = new File(respath);
 			if(!f.exists()){
 				f.mkdir();
 			}
@@ -78,7 +80,7 @@ public class Controller {
 	
 	public void einlesen(){
 		try {
-			FileInputStream saveFile = new FileInputStream("res/stats.sav");
+			FileInputStream saveFile = new FileInputStream(respath + "stats.sav");
 			ObjectInputStream restore = new ObjectInputStream(saveFile);
 			model.setaCookies((Integer) restore.readObject());
 			model.setaLvl((Integer) restore.readObject());
@@ -98,7 +100,7 @@ public class Controller {
 	
 	public void saveWaitingTime(){
 		try{
-			FileOutputStream saveFile = new FileOutputStream("res/wait.sav");
+			FileOutputStream saveFile = new FileOutputStream(respath + "wait.sav");
 			ObjectOutputStream save = new ObjectOutputStream(saveFile);
 			save.writeObject(model.getWaitingPointEnd());
 			save.close();
@@ -109,7 +111,7 @@ public class Controller {
 	public void readWaitingTime(){
 		FileInputStream saveFile;
 		try {
-			saveFile = new FileInputStream("res/wait.sav");
+			saveFile = new FileInputStream(respath + "wait.sav");
 			ObjectInputStream restore = new ObjectInputStream(saveFile);
 			model.setWaitingPointEnd((Long) restore.readObject());
 			restore.close();
@@ -119,7 +121,7 @@ public class Controller {
 	
 	public void readQuestions(){		
 		try {
-			BufferedReader in = new BufferedReader(new FileReader("res/questions.txt"));
+			BufferedReader in = new BufferedReader(new FileReader(respath + "questions.txt"));
 			int count = 0;
 		    while ( in.readLine() != null ) {
 		    	count++;
@@ -128,7 +130,7 @@ public class Controller {
 		    
 			Question[] questions = new Question[count];
 			
-			in = new BufferedReader(new FileReader("res/questions.txt"));
+			in = new BufferedReader(new FileReader(respath + "questions.txt"));
 			
 			String zeile = null;
 			String[] splittedS;
@@ -183,8 +185,8 @@ public class Controller {
 			model.setLifeCookie(3);
 			model.setSchachteln(0);
 			model.setWaitingPointEnd(0);
-			if(new File("res/wait.sav").exists()){
-				new File("res/wait.sav").delete();
+			if(new File(respath + "wait.sav").exists()){
+				new File(respath + "wait.sav").delete();
 			}	
 			readQuestions();
 			save();

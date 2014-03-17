@@ -1,4 +1,4 @@
-package view;
+package cookiequiz.view;
 
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;

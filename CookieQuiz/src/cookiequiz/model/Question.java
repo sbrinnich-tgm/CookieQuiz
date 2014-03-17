@@ -1,4 +1,4 @@
-package model;
+package cookiequiz.model;
 
 public class Question {
 
