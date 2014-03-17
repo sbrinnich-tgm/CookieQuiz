@@ -11,6 +11,7 @@ public class Images{
 	private BufferedImage[] backArrows = new BufferedImage[2];
 	private BufferedImage[] lifeCookies = new BufferedImage[3];
 	private BufferedImage[] cookies = new BufferedImage[9];
+	private BufferedImage[] waitcookies = new BufferedImage[50];
 	private BufferedImage schachteln;
 
 	public Images(String path){
@@ -43,6 +44,12 @@ public class Images{
 		}catch(Exception e){
 		}
 		try{
+			for(int i = 0; i < waitcookies.length; i++){
+				waitcookies[i] = ImageIO.read(getClass().getResource(path + "waitcookie_" + ((i*2)+2) + ".png"));
+			}
+		}catch(Exception e){
+		}
+		try{
 			schachteln = ImageIO.read(getClass().getResource(path + "schachteln.png"));
 		}catch(Exception e){ 
 		}
@@ -70,6 +77,10 @@ public class Images{
 	
 	public BufferedImage getSchachteln(){
 		return schachteln;
+	}
+	
+	public BufferedImage[] getWaitcookies(){
+		return waitcookies;
 	}
 	
 }

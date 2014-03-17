@@ -37,6 +37,9 @@ public class GamePanel extends JPanel{
 		
 		progbar = new JProgressBar();
 		progbar.setMaximum(Controller.antwortzeit*10-10);
+		progbar.setBackground(Color.GRAY);
+		progbar.setBorderPainted(false);
+		progbar.setForeground(Color.GREEN);
 		
 		this.addMouseListener(c.getMouseListener());
 		this.addMouseMotionListener(c.getMouseListener());
@@ -54,7 +57,7 @@ public class GamePanel extends JPanel{
 		g2d.drawImage(c.getImages().getBackgroundGame(), 0, 0, this);		
 
 		//Frage
-		g2d.setColor(new Color(0, 0, 0, 75));
+		g2d.setColor(new Color(0, 0, 0, 90));
 		g2d.fillRoundRect(30, 90, 515, 160, 10, 10);
 		
 		g2d.setColor(Color.BLACK);
@@ -137,6 +140,10 @@ public class GamePanel extends JPanel{
 	
 	public JProgressBar getProgBar(){
 		return progbar;
+	}
+	
+	public void setProgBarColor(Color color){
+		progbar.setForeground(color);
 	}
 	
 }

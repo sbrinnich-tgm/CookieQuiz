@@ -1,5 +1,7 @@
 package model;
 
+import java.awt.Color;
+
 import control.Controller;
 
 public class TimeLoop extends Thread{
@@ -50,6 +52,11 @@ public class TimeLoop extends Thread{
 				}
 				if(c.actualmode == Controller.mode_Game){
 					c.getView().getGamePanel().setProgBarValue(m.getWartezeit()*10-i);
+					if(c.getView().getGamePanel().getProgBar().getValue() < ((double)Controller.antwortzeit/10)*33){
+						c.getView().getGamePanel().setProgBarColor(Color.RED);
+					}else if(c.getView().getGamePanel().getProgBar().getValue() < ((double)Controller.antwortzeit/10)*66){
+						c.getView().getGamePanel().setProgBarColor(Color.ORANGE);
+					}
 				}
 			}
 		}

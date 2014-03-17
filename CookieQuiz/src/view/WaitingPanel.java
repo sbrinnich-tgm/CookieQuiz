@@ -74,17 +74,43 @@ public class WaitingPanel extends JPanel{
 			g2d.drawString(c.getModel().getaLvl()+"", 45, 40);
 		}
 		
+
+		//Hintergrund
+		g2d.setColor(new Color(0, 0, 0, 100));
+		g2d.fillRect(0, 0, c.getView().getFrame().getWidth(), c.getView().getFrame().getHeight());
+		
 		//Wartezeit
 		long wartezeit = c.getModel().getWaitingPointEnd();
 		wartezeit -= System.currentTimeMillis();
 		wartezeit /= 1000;
-		g2d.drawString(wartezeit+"", 250, 250);
 		
 		double percent = (double)(Controller.waitTime-wartezeit)/((double)Controller.waitTime/100);
 		percent = (int)(percent*100);
 		percent = percent/100;
 		
-		g2d.drawString(percent+"", 250, 300);
+		try{
+			g2d.drawImage(c.getImages().getWaitcookies()[((int)percent)/2-1], 100, 125, this);
+		}catch(Exception e){
+			g2d.drawImage(c.getImages().getWaitcookies()[0], 100, 125, this);
+		}
+
+
+		g2d.setColor(Color.BLACK);
+		g2d.drawString(percent+"", 258, 320);
+		g2d.drawString(percent+"", 262, 320);
+		g2d.drawString(percent+"", 260, 318);
+		g2d.drawString(percent+"", 260, 322);
+		g2d.setColor(Color.WHITE);
+		g2d.drawString(percent+"", 260, 320);
+		
+		
+		g2d.setColor(Color.BLACK);
+		g2d.drawString("Noch " + wartezeit + " Sekunden!", 198, 520);
+		g2d.drawString("Noch " + wartezeit + " Sekunden!", 202, 520);
+		g2d.drawString("Noch " + wartezeit + " Sekunden!", 200, 518);
+		g2d.drawString("Noch " + wartezeit + " Sekunden!", 200, 522);
+		g2d.setColor(Color.WHITE);
+		g2d.drawString("Noch " + wartezeit + " Sekunden!", 200, 520);
 		
 		//Zurück-Pfeil
 //		if(actualRect == rectBack){
@@ -92,9 +118,6 @@ public class WaitingPanel extends JPanel{
 //		}else{
 //			g2d.drawImage(c.getImages().getBackArrows()[0], (int)rectBack.getX(), (int)rectBack.getY(), this);
 //		}
-
-		g2d.setColor(new Color(0, 0, 0, 100));
-		g2d.fillRect(0, 0, c.getView().getFrame().getWidth(), c.getView().getFrame().getHeight());
 		
 	}
 
