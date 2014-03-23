@@ -1,3 +1,14 @@
-Frage 1	Antwort 1	Antwort 2	Antwort 3	Antwort 4	2
-Das ist Frage 2	Das ist Antwort 1	Das ist Antwort 2	Das ist Antwort 3	Das ist Antwort 4	4
-Hallo	Das	ist	ein	Cookie	4
+Seit welchem Jahr gibt es die typischen "Butterkekse"?	1758	1886	1907	1923	2
+Nach wem wurden die "Leibniz-Kekse" benannt?	Gottfried Wilhelm Leibniz	Karl Ludwig Leibniz	Albrecht Leibniz	Helmut August Leibniz	1
+Wie viele "Zähne" hat ein typischer Leibniz-Butterkeks?	25	46	52	64	3
+Aus welchem Land stammt der Keks ursprünglich?	USA	Deutschland	England	Schweden	3
+Was bedeutet "Pater noster"?	Mutter unser	Vater unser	Gott unser	Sohn unser	2
+Wo fand die Fußball-WM 2006 statt?	Russland	England	Korea	Deutschland	4
+Wen brauchen viele Parasiten zum Überleben?	Kneiper	Barkeeper	Wirt	Oberkellner	3
+Was verbirgt sich in Gaststätten und Hotels hinter einer Tür mit der Aufschrift "00"?	Das Chefbüro	Eine Toilette	Eine Vorratskammer	Der Ausgang	2
+Was wurde Ende 2001 in einem "Starter-Kit" in Europa verteilt?	Flaggen	Euro Münzen	Freikarten	Briefmarken	2
+Was befindet sich im menschlichen Auge?	Äste	Knospen	Zapfen	Brocken	3
+Wo steht das Anne-Frank-Haus?	Augsburg	Maastrich	Rotterdam	Amsterdam	4
+Woher stammen "Tacos"?	Mexiko	Spanien	Deutschland	Italien	1
+Wie heißt der beste Freund von "Bart Simpson"?	Martin Prince	Ralph Wiggum	Peter Griffen	Milhouse van Houten	4
+Wie lang ist der Äquator?	45100 km	40075 km	42075 km	43775 km	2

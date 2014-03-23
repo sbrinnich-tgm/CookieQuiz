@@ -1,7 +1,5 @@
 package cookiequiz.model;
 
-import java.io.File;
-
 import cookiequiz.control.Controller;
 
 public class Model {
@@ -29,10 +27,8 @@ public class Model {
 		c.actualmode = Controller.mode_WaitScreen;
 		aCookies = 0;
 		
-		if(!new File("res/wait.sav").exists()){
+		if(waitingPointEnd == 0){
 			waitingPointEnd = calculateWaitTime();
-		}else{
-			new File("res/wait.sav").delete();
 		}
 		
 		c.showWaitingScreen();
@@ -85,6 +81,7 @@ public class Model {
 	public void resetLifeCookie(){
 		timeLoop.stopLoop();
 		lifeCookie = 3;
+		waitingPointEnd = 0;
 		c.nextQuestion();
 	}
 
