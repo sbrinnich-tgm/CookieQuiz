@@ -96,21 +96,40 @@ public class WaitingPanel extends JPanel{
 
 
 		g2d.setColor(Color.BLACK);
-		g2d.drawString(percent+"", 258, 320);
-		g2d.drawString(percent+"", 262, 320);
-		g2d.drawString(percent+"", 260, 318);
-		g2d.drawString(percent+"", 260, 322);
+		g2d.drawString(percent+" %", 258, 320);
+		g2d.drawString(percent+" %", 262, 320);
+		g2d.drawString(percent+" %", 260, 318);
+		g2d.drawString(percent+" %", 260, 322);
 		g2d.setColor(Color.WHITE);
-		g2d.drawString(percent+"", 260, 320);
+		g2d.drawString(percent+" %", 260, 320);
 		
 		
-		g2d.setColor(Color.BLACK);
-		g2d.drawString("Noch " + wartezeit + " Sekunden!", 198, 520);
-		g2d.drawString("Noch " + wartezeit + " Sekunden!", 202, 520);
-		g2d.drawString("Noch " + wartezeit + " Sekunden!", 200, 518);
-		g2d.drawString("Noch " + wartezeit + " Sekunden!", 200, 522);
-		g2d.setColor(Color.WHITE);
-		g2d.drawString("Noch " + wartezeit + " Sekunden!", 200, 520);
+		if(wartezeit/3600 > 0){
+			g2d.setColor(Color.BLACK);
+			g2d.drawString("Noch " + (wartezeit/3600+1) + " Stunden!", 198, 520);
+			g2d.drawString("Noch " + (wartezeit/3600+1) + " Stunden!", 202, 520);
+			g2d.drawString("Noch " + (wartezeit/3600+1) + " Stunden!", 200, 518);
+			g2d.drawString("Noch " + (wartezeit/3600+1) + " Stunden!", 200, 522);
+			g2d.setColor(Color.WHITE);
+			g2d.drawString("Noch " + (wartezeit/3600+1) + " Stunden!", 200, 520);
+		}else if(wartezeit/60 > 0){
+			g2d.setColor(Color.BLACK);
+			g2d.drawString("Noch " + (wartezeit/60+1) + " Minuten!", 198, 520);
+			g2d.drawString("Noch " + (wartezeit/60+1) + " Minuten!", 202, 520);
+			g2d.drawString("Noch " + (wartezeit/60+1) + " Minuten!", 200, 518);
+			g2d.drawString("Noch " + (wartezeit/60+1) + " Minuten!", 200, 522);
+			g2d.setColor(Color.WHITE);
+			g2d.drawString("Noch " + (wartezeit/60+1) + " Minuten!", 200, 520);
+		}else{
+			g2d.setColor(Color.BLACK);
+			g2d.drawString("Noch " + wartezeit + " Sekunden!", 198, 520);
+			g2d.drawString("Noch " + wartezeit + " Sekunden!", 202, 520);
+			g2d.drawString("Noch " + wartezeit + " Sekunden!", 200, 518);
+			g2d.drawString("Noch " + wartezeit + " Sekunden!", 200, 522);
+			g2d.setColor(Color.WHITE);
+			g2d.drawString("Noch " + wartezeit + " Sekunden!", 200, 520);
+		}
+		
 		
 		//Zurück-Pfeil
 //		if(actualRect == rectBack){

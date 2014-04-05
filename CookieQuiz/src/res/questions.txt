@@ -5,10 +5,10 @@ Aus welchem Land stammt der Keks ursprünglich?	USA	Deutschland	England	Schweden	
 Was bedeutet "Pater noster"?	Mutter unser	Vater unser	Gott unser	Sohn unser	2
 Wo fand die Fußball-WM 2006 statt?	Russland	England	Korea	Deutschland	4
 Wen brauchen viele Parasiten zum Überleben?	Kneiper	Barkeeper	Wirt	Oberkellner	3
-Was verbirgt sich in Gaststätten und Hotels hinter einer Tür mit der Aufschrift "00"?	Das Chefbüro	Eine Toilette	Eine Vorratskammer	Der Ausgang	2
+Was verbirgt sich in Gaststätten und Hotels hinter einer Tür mit der /nAufschrift "00"?	Das Chefbüro	Eine Toilette	Eine Vorratskammer	Der Ausgang	2
 Was wurde Ende 2001 in einem "Starter-Kit" in Europa verteilt?	Flaggen	Euro Münzen	Freikarten	Briefmarken	2
 Was befindet sich im menschlichen Auge?	Äste	Knospen	Zapfen	Brocken	3
 Wo steht das Anne-Frank-Haus?	Augsburg	Maastrich	Rotterdam	Amsterdam	4
 Woher stammen "Tacos"?	Mexiko	Spanien	Deutschland	Italien	1
-Wie heißt der beste Freund von "Bart Simpson"?	Martin Prince	Ralph Wiggum	Peter Griffen	Milhouse van Houten	4
+Wie heißt der beste Freund von "Bart Simpson"?	Martin Prince	Ralph Wiggum	Peter Griffin	Milhouse van Houten	4
 Wie lang ist der Äquator?	45100 km	40075 km	42075 km	43775 km	2

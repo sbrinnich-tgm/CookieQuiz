@@ -60,13 +60,26 @@ public class GamePanel extends JPanel{
 		g2d.setColor(new Color(0, 0, 0, 90));
 		g2d.fillRoundRect(30, 90, 515, 160, 10, 10);
 		
-		g2d.setColor(Color.BLACK);
-		g2d.drawString(c.getModel().getaQuestion().getQuestion(), 52, 125);
-		g2d.drawString(c.getModel().getaQuestion().getQuestion(), 48, 125);
-		g2d.drawString(c.getModel().getaQuestion().getQuestion(), 50, 123);
-		g2d.drawString(c.getModel().getaQuestion().getQuestion(), 50, 127);
-		g2d.setColor(Color.WHITE);
-		g2d.drawString(c.getModel().getaQuestion().getQuestion(), 50, 125);
+		String[] q = c.getModel().getaQuestion().getQuestion().split("/n");
+		if(q.length > 1){
+			for(int i = 0; i < q.length; i++){
+				g2d.setColor(Color.BLACK);
+				g2d.drawString(q[i], 52, 125+i*25);
+				g2d.drawString(q[i], 48, 125+i*25);
+				g2d.drawString(q[i], 50, 123+i*25);
+				g2d.drawString(q[i], 50, 127+i*25);
+				g2d.setColor(Color.WHITE);
+				g2d.drawString(q[i], 50, 125+i*25);
+			}
+		}else{
+			g2d.setColor(Color.BLACK);
+			g2d.drawString(c.getModel().getaQuestion().getQuestion(), 52, 125);
+			g2d.drawString(c.getModel().getaQuestion().getQuestion(), 48, 125);
+			g2d.drawString(c.getModel().getaQuestion().getQuestion(), 50, 123);
+			g2d.drawString(c.getModel().getaQuestion().getQuestion(), 50, 127);
+			g2d.setColor(Color.WHITE);
+			g2d.drawString(c.getModel().getaQuestion().getQuestion(), 50, 125);
+		}
 		
 		//Antworten
 		g2d.setColor(Color.BLACK);

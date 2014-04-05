@@ -25,7 +25,7 @@ public class Controller {
 	private MouseListen mouseL;
 	
 	public static final int antwortzeit = 20;
-	public static final int waitTime = 10;
+	public static final int waitTime = 3600;
 	
 	public static final int mode_MainMenu = 0;
 	public static final int mode_Game = 1;
